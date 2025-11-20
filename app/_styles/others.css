@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  /* .app_width {
+    @apply max-w-[1800px] mx-auto;
+  } */
+  .hero_h1 {
+    @apply text-[160px] lg:text-[420px] font-bold uppercase leading-[130px] lg:leading-[320px];
+    font-family: var(--font-humane);
+  }
+  .text-heading {
+    @apply text-[100px] lg:text-[200px] font-bold uppercase;
+    font-family: var(--font-humane);
+  }
+  #hero-section {
+    position: relative;
+    z-index: 0; /* or low number */
+  }
+
+  .other-section {
+    position: relative;
+    z-index: 10; /* higher than hero */
+  }
+}

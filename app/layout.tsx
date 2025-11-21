@@ -33,8 +33,8 @@ export default function RootLayout({
           "antialiased"
         )}
       >
+        <Navbar />
         <SmoothScrollProvider>
-          <Navbar />
           {children}
           <Footer />
         </SmoothScrollProvider>

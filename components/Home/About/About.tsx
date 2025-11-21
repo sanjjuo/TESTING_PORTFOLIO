@@ -4,13 +4,13 @@ export const About = () => {
   return (
     <section className="relative h-[800px] max-w-[1800px] mx-auto">
       <div
-        className="absolute inset-0 bg-center bg-cover bg-fixed h-full"
+        className="absolute inset-0 bg-center bg-cover bg-fixed h-full rounded-2xl"
         style={{
           backgroundImage: "url('/JPG/about.jpg')",
         }}
       ></div>
 
-      <div className="absolute inset-0 bg-black/80">
+      <div className="absolute inset-0 bg-black/80 rounded-2xl">
         <p className="absolute top-5 lg:top-10 left-5 lg:left-10 max-w-6xl">
           I am an enthusiast of extreme sports and what I love about these
           sports is the creative aspect and the fact that each athlete has their

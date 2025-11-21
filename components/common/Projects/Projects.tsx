@@ -18,8 +18,7 @@ export const Projects = ({ category }: { category: string }) => {
       : workData.filter((item) => item.category === category);
 
   //how many items show in both home and work pages
-  const itemsToShow =
-    pathname === "/" ? filteredData.slice(0, 3) : filteredData;
+  const itemsToShow = pathname === "/" ? workData.slice(0, 3) : filteredData;
 
   return (
     <section className={cn(isTitle && "px-0 py-10")}>
@@ -44,7 +43,7 @@ export const Projects = ({ category }: { category: string }) => {
               <div
                 className={cn(
                   "relative w-full",
-                  isFull ? "h-[700px]" : "h-[500px]"
+                  isFull ? "h-[200px] lg:h-[700px]" : "h-[200px] lg:h-[500px]"
                 )}
               >
                 <Image
@@ -54,6 +53,12 @@ export const Projects = ({ category }: { category: string }) => {
                   className="object-cover"
                 />
               </div>
+              <p className="flex items-end justify-end">
+                <span className="text-muted-foreground font-bold mr-2">
+                  Completed
+                </span>
+                {data.completed}
+              </p>
             </div>
           );
         })}

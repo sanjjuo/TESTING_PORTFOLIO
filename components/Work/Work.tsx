@@ -9,18 +9,20 @@ import { buttonGroupData } from "./data";
 export const Work = () => {
   const [category, setCategory] = React.useState("all");
   return (
-    <section className="space-y-5">
-      <Tabs defaultValue="grid" className="w-full">
-        <div className="flex items-center justify-between w-full">
-          <TabHeader />
-          <FilterComponent
-            category={category}
-            action={setCategory}
-            content={buttonGroupData}
-          />
-        </div>
-        <TabContent category={category} />
-      </Tabs>
-    </section>
+    <div className="app_width mt-20 lg:mt-10">
+      <section>
+        <Tabs defaultValue="grid" className="w-full">
+          <div className="flex flex-col lg:flex-row items-end lg:items-center justify-between w-full space-y-3 lg:space-y-0">
+            <TabHeader />
+            <FilterComponent
+              category={category}
+              action={setCategory}
+              content={buttonGroupData}
+            />
+          </div>
+          <TabContent category={category} />
+        </Tabs>
+      </section>
+    </div>
   );
 };

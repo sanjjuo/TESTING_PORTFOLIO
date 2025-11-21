@@ -1,7 +1,6 @@
+import { workData } from "@/components/common/Projects/data";
 import { Button } from "@/components/ui/button";
 import { ButtonGroup } from "@/components/ui/button-group";
-import React from "react";
-import { buttonGroupDataTypes } from "../../types";
 import { cn } from "@/lib/utils";
 
 interface FilterComponentProps {
@@ -18,22 +17,21 @@ export const FilterComponent = ({
   return (
     <ButtonGroup className="space-x-4">
       {content.map((data) => {
-        const Icon = data.name as React.ElementType; // if it's an icon component
+        //count of each category
+        const count = workData.filter(
+          (item) => item.category === data.value
+        ).length;
         return (
           <Button
             key={data.id}
             variant="ghost"
             className={cn(
               category === data.value ? "text-white" : "text-muted-foreground",
-              "underline underline-offset-2 text-base capitalize transition transform ease-in-out duration-500 p-1 hover:bg-transparent hover:text-white"
+              "underline underline-offset-2 text-base capitalize transition transform ease-in-out duration-500 p-1 hover:bg-transparent hover:text-muted-foreground"
             )}
             onClick={() => action(data.value)}
           >
-            {typeof data.name === "string" ? (
-              data.name
-            ) : (
-              <Icon className="!size-6" />
-            )}
+            {data.name} ({data.value === "all" ? workData.length : count})
           </Button>
         );
       })}

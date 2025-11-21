@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer components {
-  /* .app_width {
+  .app_width {
     @apply max-w-[1800px] mx-auto;
-  } */
+  }
   .hero_h1 {
     @apply text-[160px] lg:text-[420px] font-bold uppercase leading-[130px] lg:leading-[320px];
     font-family: var(--font-humane);

@@ -9,12 +9,16 @@ export const Home = () => {
   return (
     <div>
       <Hero />
-      <div id="other-sections">
-        <Services />
-        <Projects category="" />
+      <div>
+        <div className="app_width">
+          <Services />
+          <Projects category="" />
+        </div>
         <Marquee />
-        <About />
-        <LetsWork />
+        <div className="app_width">
+          <About />
+          <LetsWork />
+        </div>
       </div>
     </div>
   );

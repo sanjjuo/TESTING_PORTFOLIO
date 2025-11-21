@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 
 export const LetsWork = () => {
   return (
-    <section className="h-[800px] flex items-center justify-center overflow-hidden">
+    <section className="h-[500px] lg:h-[800px] flex items-center justify-center overflow-hidden">
       <div className="relative">
         <h1
           style={{

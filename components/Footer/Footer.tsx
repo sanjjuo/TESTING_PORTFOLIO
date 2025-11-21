@@ -3,7 +3,7 @@ import { footerData } from "./data";
 
 export const Footer = () => {
   return (
-    <section className="flex flex-col lg:flex-row items-center justify-between space-y-5 lg:space-y-0 py-5">
+    <footer className="flex flex-col lg:flex-row items-center justify-between space-y-5 lg:space-y-0 py-5 px-5 lg:px-12">
       <p>
         @edition {new Date().getFullYear()} • crafted & coded by Mohamed Sanjeed
       </p>
@@ -18,6 +18,6 @@ export const Footer = () => {
           </Link>
         ))}
       </ul>
-    </section>
+    </footer>
   );
 };

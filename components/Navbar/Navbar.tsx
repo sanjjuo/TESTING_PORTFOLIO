@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 export const Navbar = () => {
   const pathName = usePathname();
   return (
-    <nav className="sticky top-0 w-full z-50 h-5 py-5 px-5 lg:px-12 bg-transparent">
+    <nav className="sticky top-0 w-full z-50 py-5 px-5 lg:px-12">
       <div className="flex items-center justify-between">
         <div>
           <h5 className="text-lg">Mohamed Sanjeed</h5>

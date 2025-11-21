@@ -21,7 +21,12 @@ export const ListWork = ({ category }: { category: string }) => {
           </div>
           <div className="flex flex-col items-end space-y-3">
             <ArrowUp className="-rotate-45" />
-            <p>{data.completed}</p>
+            <p className="flex items-end justify-end">
+              <span className="text-muted-foreground font-bold mr-2">
+                Completed
+              </span>
+              {data.completed}
+            </p>
           </div>
         </Link>
       ))}

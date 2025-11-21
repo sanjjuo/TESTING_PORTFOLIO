@@ -1,39 +1,10 @@
 "use client";
-import React from "react";
 import { footerData } from "@/components/Footer/data";
 import Link from "next/link";
+import { useContactDetailsFunction } from "./Function/useContactDetailsFunction";
 
 export const ContactDetails = () => {
-  const [dubaiTime, setDubaiTime] = React.useState("");
-
-  React.useEffect(() => {
-    const update = () => {
-      const now = new Date();
-
-      // Format date (DD/MM/YYYY)
-      const date = new Intl.DateTimeFormat("en-GB", {
-        timeZone: "Asia/Dubai",
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-      }).format(now);
-
-      // Format time (12-hour)
-      const time = new Intl.DateTimeFormat("en-US", {
-        timeZone: "Asia/Dubai",
-        hour: "2-digit",
-        minute: "2-digit",
-        hour12: true,
-      }).format(now);
-
-      setDubaiTime(`${date} • ${time}`);
-    };
-
-    update(); // initial run
-    const interval = setInterval(update, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
+  const { dubaiTime } = useContactDetailsFunction();
   return (
     <section className="space-y-10">
       <div className="space-y-4">

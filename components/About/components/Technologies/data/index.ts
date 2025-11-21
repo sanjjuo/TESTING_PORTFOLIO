@@ -40,14 +40,14 @@ export const technologiesData = [
     icon: CSS,
     href: "https://developer.mozilla.org/en-US/docs/Web/CSS",
   },
-  { id: 8, name: "HTML", icon: Html, href: "https://www.w3schools.com/html/" },
+  { id: 8, name: "Html", icon: Html, href: "https://www.w3schools.com/html/" },
   {
     id: 9,
     name: "Bootstrap",
     icon: Bootstrap,
     href: "https://getbootstrap.com/",
   },
-  { id: 10, name: "GSAP", icon: Gsap, href: "https://gsap.com/" },
+  { id: 10, name: "Gsap", icon: Gsap, href: "https://gsap.com/" },
   {
     id: 11,
     name: "Framer Motion",

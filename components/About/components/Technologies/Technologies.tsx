@@ -19,6 +19,7 @@ export const Technologies = () => {
             className="flex flex-col items-center justify-center"
           >
             <data.icon className="w-20 h-20" />
+            {/* <Image src={data.icon} alt={data.name} width={50} height={50} /> */}
             <Link href={data.href}>{data.name}</Link>
           </div>
         ))}

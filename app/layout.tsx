@@ -6,6 +6,7 @@ import { Antonio } from "next/font/google";
 import { Humane } from "./_fonts";
 import "./_styles/globals.css";
 import { SmoothScrollProvider } from "@/components/SmoothScrollProvider/SmoothScrollProvider";
+import { Toaster } from "@/components/ui/sonner";
 
 const antonio = Antonio({
   subsets: ["latin"],
@@ -35,7 +36,8 @@ export default function RootLayout({
       >
         <Navbar />
         <SmoothScrollProvider>
-          {children}
+          <main> {children}</main>
+          <Toaster />
           <Footer />
         </SmoothScrollProvider>
       </body>

@@ -2,12 +2,10 @@
 import React, { SVGProps } from "react";
 const Bootstrap = (props: SVGProps<SVGSVGElement>) => {
   const [hovered, setHovered] = React.useState(false);
-  const gray = "#999da9";
+  const gray = "#9E9E9E";
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width={100}
-      height={100}
       viewBox="0 0 48 48"
       {...props}
       onMouseEnter={() => setHovered(true)}

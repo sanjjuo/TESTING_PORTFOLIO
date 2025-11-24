@@ -14,14 +14,14 @@ export const Technologies = () => {
       </h1>
       <div className="grid grid-cols-3 lg:grid-cols-5 gap-10 mt-10">
         {technologiesData.map((data) => (
-          <div
+          <Link
+            href={data.href}
             key={data.id}
-            className="flex flex-col items-center justify-center"
+            className="flex flex-col items-center justify-center space-y-1"
           >
-            <data.icon className="w-20 h-20" />
-            {/* <Image src={data.icon} alt={data.name} width={50} height={50} /> */}
-            <Link href={data.href}>{data.name}</Link>
-          </div>
+            <data.icon className="w-28 h-28" />
+            <p>{data.name}</p>
+          </Link>
         ))}
       </div>
     </section>

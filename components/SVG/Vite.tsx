@@ -38,7 +38,7 @@ const Vite = (props: SVGProps<SVGSVGElement>) => {
           gradientTransform="translate(0 .937) scale(.3122)"
           gradientUnits="userSpaceOnUse"
         >
-          <stop offset={0} stopColor={hovered ? "#ffea83" : "#FFF"} />
+          <stop offset={0} stopColor={hovered ? "#ffea83" : "#"} />
           <stop offset={0.083} stopColor={hovered ? "#ffdd35" : "#FFF"} />
           <stop offset={1} stopColor={hovered ? "#ffa800" : gray} />
         </linearGradient>

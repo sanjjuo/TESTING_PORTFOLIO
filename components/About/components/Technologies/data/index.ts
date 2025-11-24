@@ -1,10 +1,12 @@
 import Bootstrap from "@/components/SVG/Bootstrap";
 import CSS from "@/components/SVG/CSS";
+import ExpressJs from "@/components/SVG/ExpressJs";
 import Firebase from "@/components/SVG/Firebase";
 import FramerMotion from "@/components/SVG/FramerMotion";
 import Gsap from "@/components/SVG/Gsap";
 import Html from "@/components/SVG/Html";
 import Javascript from "@/components/SVG/Javascript";
+import MongoDB from "@/components/SVG/MongoDB";
 import NextJs from "@/components/SVG/NextJs";
 import NodeJs from "@/components/SVG/NodeJs";
 import ReactJs from "@/components/SVG/ReactJs";
@@ -52,7 +54,7 @@ export const technologiesData = [
     id: 11,
     name: "Framer Motion",
     icon: FramerMotion,
-    href: "https://motion.dev/",
+    href: "https://www.framer.com/developers/",
   },
   { id: 12, name: "Node.js", icon: NodeJs, href: "https://nodejs.org/en" },
   {
@@ -60,5 +62,17 @@ export const technologiesData = [
     name: "Firebase",
     icon: Firebase,
     href: "https://firebase.google.com/",
+  },
+  {
+    id: 14,
+    name: "Express.js",
+    icon: ExpressJs,
+    href: "https://expressjs.com/",
+  },
+  {
+    id: 15,
+    name: "Mongo DB",
+    icon: MongoDB,
+    href: "https://www.mongodb.com/",
   },
 ];

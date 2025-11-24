@@ -1,7 +1,7 @@
-import { Hero } from "@/components/Home/Hero/Hero";
-import { Marquee } from "@/components/Home/Marquee/Marquee";
-import { Services } from "@/components/Home/Services/Services";
-import { About } from "@/components/Home/About/About";
+import { Hero } from "@/components/Home/components/Hero/Hero";
+import { Marquee } from "@/components/Home/components/Marquee/Marquee";
+import { Services } from "@/components/Home/components/Services/Services";
+import { About } from "@/components/Home/components/About/About";
 import { LetsWork } from "@/components/common/LetsWork/LetsWork";
 import { Projects } from "@/components/common/Projects/Projects";
 

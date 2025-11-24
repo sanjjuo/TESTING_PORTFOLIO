@@ -1,5 +1,3 @@
-import { buttonGroupDataTypes } from "../types";
-
 export const buttonGroupData: buttonGroupDataTypes[] = [
   {
     id: 0,

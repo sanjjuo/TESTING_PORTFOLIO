@@ -145,7 +145,7 @@ export const ScrollVelocity: React.FC<ScrollVelocityProps> = ({
   }
 
   return (
-    <section>
+    <section className="px-0">
       {texts.map((text, index) => (
         <VelocityText
           key={index}

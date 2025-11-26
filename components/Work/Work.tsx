@@ -5,6 +5,10 @@ import { FilterComponent } from "./components/FilterComponent/FilterComponent";
 import { TabContent } from "./components/TabContent/TabContent";
 import { TabHeader } from "./components/TabHeader/TabHeader";
 import { buttonGroupData } from "./data";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const Work = () => {
   const [category, setCategory] = React.useState("all");

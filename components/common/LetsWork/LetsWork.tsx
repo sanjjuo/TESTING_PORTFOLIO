@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { useLetsWorkGsap } from "./Animations/useLetsWorkGsap";
+import Link from "next/link";
 
 export const LetsWork = () => {
   const { sectionRef, descTextRef, btnRef } = useLetsWorkGsap();
@@ -26,11 +27,11 @@ export const LetsWork = () => {
             creation together? WANT TO DISCUSS A NEW PROJECT?
           </p>
 
-          <div ref={btnRef}>
+          <Link href="/contact" ref={btnRef}>
             <Button className="text-2xl p-7 uppercase rounded-3xl bg-white text-black hover:bg-white/70">
               contact me
             </Button>
-          </div>
+          </Link>
         </div>
       </div>
     </section>

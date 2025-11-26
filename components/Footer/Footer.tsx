@@ -3,7 +3,7 @@ import { footerData } from "./data";
 
 export const Footer = () => {
   return (
-    <footer className="flex flex-col lg:flex-row items-center justify-between space-y-5 lg:space-y-0 py-5 px-5 lg:px-12">
+    <footer className="flex flex-col lg:flex-row items-center justify-between space-y-5 lg:space-y-0 py-5">
       <p>
         @edition {new Date().getFullYear()} • crafted & coded by Mohamed Sanjeed
       </p>

@@ -4,6 +4,7 @@ import { ArrowUp } from "lucide-react";
 import Image from "next/image";
 import { useProjectsGsap } from "./services/Animations/useProjectsGsap";
 import { useProjectsFunction } from "./services/Functions/useProjectsFunction";
+import Link from "next/link";
 
 export const Projects = ({ category }: { category: string }) => {
   const { isTitle, itemsToShow } = useProjectsFunction({ category });
@@ -19,7 +20,8 @@ export const Projects = ({ category }: { category: string }) => {
           // Full width for 1st and 4th items → index 0 and index 3
           const isFull = index % 3 === 0;
           return (
-            <div
+            <Link
+              href={`/work/${data.slug}`}
               ref={(item) => {
                 projectRef.current[index] = item;
               }}
@@ -41,7 +43,7 @@ export const Projects = ({ category }: { category: string }) => {
                 )}
               >
                 <Image
-                  src={data.image}
+                  src={data.images[0]}
                   alt={data.name}
                   fill
                   className="object-cover"
@@ -53,7 +55,7 @@ export const Projects = ({ category }: { category: string }) => {
                 </span>
                 {data.completed}
               </p>
-            </div>
+            </Link>
           );
         })}
       </div>

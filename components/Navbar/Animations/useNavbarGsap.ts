@@ -17,7 +17,7 @@ export const useNavbarGsap = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: document.documentElement,
-        start: "top -100",
+        start: "top -20",
         toggleActions: "play reverse play reverse",
       },
     });
@@ -32,7 +32,7 @@ export const useNavbarGsap = () => {
       },
       {
         backgroundColor: "rgba(255, 255, 255, 0.08)",
-        y: 20,
+        y: 18,
         scaleX: 0.98,
         borderRadius: 20,
         duration: 0.8,

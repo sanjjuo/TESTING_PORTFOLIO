@@ -6,6 +6,7 @@ import { Services } from "@/components/Home/components/Services/Services";
 import { LetsWork } from "@/components/common/LetsWork/LetsWork";
 import { Projects } from "@/components/common/Projects/Projects";
 import { useHomeGsap } from "./Animations/useHomeGsap";
+import { Footer } from "../Footer/Footer";
 
 export const Home = () => {
   const { heroRef, othersRef } = useHomeGsap();
@@ -40,6 +41,7 @@ export const Home = () => {
         <div className="app_width">
           <AboutImage />
           <LetsWork />
+          <Footer />
         </div>
       </div>
     </main>

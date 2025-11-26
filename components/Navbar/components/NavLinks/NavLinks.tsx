@@ -12,10 +12,11 @@ export const NavLinks = ({ type }: { type: string }) => {
           key={data.id}
           href={data.href}
           className={cn(
-            pathName === data.href &&
-              "bg-white text-black rounded-3xl text-base",
-            type === "navbar" ? "text-base px-4 py-1" : "text-8xl px-7 py-3",
-            "navlinks transform transition ease-in duration-300 rounded-3xl"
+            pathName === data.href && "bg-white text-black text-base",
+            type === "navbar"
+              ? "text-base px-4 py-1 rounded-3xl"
+              : "text-7xl px-10 py-4 rounded-[50px]",
+            "navlinks transform transition ease-in duration-300"
           )}
         >
           <li className="uppercase">{data.link}</li>

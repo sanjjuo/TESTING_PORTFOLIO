@@ -5,7 +5,7 @@ import gsap from "gsap";
 export const useProjectsGsap = () => {
   const sectionRef = React.useRef<HTMLElement | null>(null);
   const headingRef = React.useRef<HTMLHeadingElement | null>(null);
-  const projectRef = React.useRef<(HTMLElement | null)[]>([]);
+  const projectRef = React.useRef<(HTMLAnchorElement | null)[]>([]);
 
   useGSAP(() => {
     const section = sectionRef.current;

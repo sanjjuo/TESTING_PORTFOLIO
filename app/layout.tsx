@@ -1,11 +1,10 @@
+import { Navbar } from "@/components/Navbar/Navbar";
+import { SmoothScrollProvider } from "@/components/SmoothScrollProvider/SmoothScrollProvider";
+import { Toaster } from "@/components/ui/sonner";
+import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Antonio } from "next/font/google";
 import { Humane } from "./_fonts";
-import { Toaster } from "@/components/ui/sonner";
-import { SmoothScrollProvider } from "@/components/SmoothScrollProvider/SmoothScrollProvider";
-import { Footer } from "@/components/Footer/Footer";
-import { Navbar } from "@/components/Navbar/Navbar";
-import { cn } from "@/lib/utils";
 import "./_styles/globals.css";
 
 const antonio = Antonio({
@@ -35,10 +34,7 @@ export default function RootLayout({
         )}
       >
         <Navbar />
-        <SmoothScrollProvider>
-          {children}
-          <Footer />
-        </SmoothScrollProvider>
+        <SmoothScrollProvider>{children}</SmoothScrollProvider>
         <Toaster />
       </body>
     </html>

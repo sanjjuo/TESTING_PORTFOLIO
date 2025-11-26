@@ -4,7 +4,7 @@ import React from "react";
 export const useLetsWorkGsap = () => {
   const sectionRef = React.useRef<HTMLDivElement | null>(null);
   const descTextRef = React.useRef<HTMLParagraphElement | null>(null);
-  const btnRef = React.useRef<HTMLDivElement | null>(null);
+  const btnRef = React.useRef<HTMLAnchorElement | null>(null);
 
   React.useEffect(() => {
     if (!descTextRef.current || !btnRef.current) return;

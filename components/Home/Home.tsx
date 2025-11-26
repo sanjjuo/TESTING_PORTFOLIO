@@ -5,45 +5,29 @@ import { Marquee } from "@/components/Home/components/Marquee/Marquee";
 import { Services } from "@/components/Home/components/Services/Services";
 import { LetsWork } from "@/components/common/LetsWork/LetsWork";
 import { Projects } from "@/components/common/Projects/Projects";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import React from "react";
-
-gsap.registerPlugin(ScrollTrigger);
-
+import { useHomeGsap } from "./Animations/useHomeGsap";
 export const Home = () => {
-  const heroRef = React.useRef<HTMLDivElement | null>(null);
-  const othersRef = React.useRef<HTMLDivElement | null>(null);
+  const { heroRef, othersRef } = useHomeGsap();
 
-  useGSAP(() => {
-    if (!heroRef.current || !othersRef.current) return;
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: heroRef.current,
-        start: "top top",
-        scrub: true,
-        pin: true,
-        pinSpacing: false,
-      },
-    });
-
-    tl.fromTo(
-      othersRef.current,
-      {
-        y: 0,
-      },
-      {
-        y: -10,
-        ease: "power1.inOut",
-      }
-    );
-    return () => {
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-    };
-  }, []);
   return (
     <main>
+      {/* <BlobCursor
+        blobType="circle"
+        fillColor="#5227FF"
+        trailCount={3}
+        sizes={[60, 125, 75]}
+        innerSizes={[20, 35, 25]}
+        innerColor="rgba(255,255,255,0.8)"
+        opacities={[0.6, 0.6, 0.6]}
+        shadowColor="rgba(0,0,0,0.75)"
+        shadowBlur={5}
+        shadowOffsetX={10}
+        shadowOffsetY={10}
+        filterStdDeviation={30}
+        useFilter={true}
+        fastDuration={0.1}
+        slowDuration={0.5}
+      /> */}
       <div ref={heroRef}>
         <Hero />
       </div>

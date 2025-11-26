@@ -1,41 +1,9 @@
 "use client";
 import { Button } from "@/components/ui/button";
-import gsap from "gsap";
-import React from "react";
+import { useLetsWorkGsap } from "./Animations/useLetsWorkGsap";
 
 export const LetsWork = () => {
-  const sectionRef = React.useRef<HTMLDivElement | null>(null);
-  const descTextRef = React.useRef<HTMLParagraphElement | null>(null);
-  const btnRef = React.useRef<HTMLDivElement | null>(null);
-
-  React.useEffect(() => {
-    if (!descTextRef.current || !btnRef.current) return;
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 80%",
-        toggleActions: "play none none none",
-      },
-    });
-
-    tl.from(descTextRef.current, {
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-    }).from(
-      btnRef.current,
-      {
-        y: 100,
-        opacity: 0,
-        duration: 1,
-        ease: "expo.out",
-      },
-      "-=0.5"
-    );
-  }, []);
-
+  const { sectionRef, descTextRef, btnRef } = useLetsWorkGsap();
   return (
     <section
       ref={sectionRef}

@@ -8,7 +8,6 @@ export const About = () => {
       <ProfileHero />
       <Technologies />
       <LetsWork />
-      
     </div>
   );
 };

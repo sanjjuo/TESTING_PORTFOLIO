@@ -10,17 +10,22 @@ import gsap from "gsap";
 export const Projects = ({ category }: { category: string }) => {
   const sectionRef = React.useRef<HTMLElement | null>(null);
   const headingRef = React.useRef<HTMLHeadingElement | null>(null);
+  const projectRef = React.useRef<(HTMLElement | null)[]>([]);
 
   const { isTitle, itemsToShow } = useProjectsFunction({ category });
 
   useGSAP(() => {
     const section = sectionRef.current;
     const heading = headingRef.current;
-    if (!heading) return;
+    if (!section || !heading) return;
     const tl = gsap.timeline({
-      scrollTrigger: section,
-      start: "top 80%",
+      scrollTrigger: {
+        trigger: section,
+        start: "top 60%",
+        end: "bottom 80%",
+      },
     });
+    //title animation
     tl.fromTo(
       heading,
       {
@@ -30,17 +35,16 @@ export const Projects = ({ category }: { category: string }) => {
       {
         y: 0,
         opacity: 1,
-        ease: "power1.inOut",
-        duration: 2,
+        ease: "expo.out",
       }
     );
-    const projects = section?.querySelectorAll(".projects");
-    projects?.forEach((project) => {
-      tl.fromTo(
-        project,
-        { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, stagger: 0.02, duration: 1, ease: "expo.out" }
-      );
+    // PROJECT CARDS ANIMATION
+    tl.from(projectRef.current, {
+      y: 30,
+      opacity: 0,
+      duration: 0.6,
+      stagger: 0.5,
+      ease: "power2.out",
     });
   }, []);
   return (
@@ -54,6 +58,9 @@ export const Projects = ({ category }: { category: string }) => {
           const isFull = index % 3 === 0;
           return (
             <div
+              ref={(item) => {
+                projectRef.current[index] = item;
+              }}
               key={data.id}
               className={cn(
                 isFull ? "lg:col-span-2" : "lg:col-span-1",

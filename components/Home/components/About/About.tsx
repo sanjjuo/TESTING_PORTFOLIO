@@ -1,10 +1,33 @@
+"use client";
 import { Button } from "@/components/ui/button";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import React from "react";
 
 export const About = () => {
+  const sectionRef = React.useRef(null);
+  const largeTextRef = React.useRef(null);
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top 60%",
+        scrub: true,
+      },
+    });
+    tl.fromTo(
+      largeTextRef.current,
+      { y: 100, opacity: 0 },
+      { y: 0, opacity: 1, ease: "expo.out" }
+    );
+  }, []);
   return (
-    <section className="relative h-[800px] max-w-[1800px] mx-auto">
+    <section
+      ref={sectionRef}
+      className="relative h-[800px] max-w-[1800px] mx-auto"
+    >
       <div
-        className="absolute inset-0 bg-center bg-cover bg-fixed h-full rounded-2xl"
+        className="absolute inset-0 bg-center bg-cover bg-local h-full rounded-2xl"
         style={{
           backgroundImage: "url('/JPG/about.jpg')",
         }}
@@ -22,8 +45,9 @@ export const About = () => {
         </p>
 
         <h1
+          ref={largeTextRef}
           style={{ fontFamily: "humane" }}
-          className="flex items-center justify-center h-full text-[200px] lg:text-[350px] uppercase font-bold opacity-5"
+          className="flex items-center justify-center h-full text-[200px] lg:text-[350px] uppercase font-bold text-white/40"
         >
           about me
         </h1>

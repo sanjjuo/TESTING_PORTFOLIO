@@ -11,7 +11,6 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import React from "react";
 
 gsap.registerPlugin(ScrollTrigger);
-gsap.defaults({ ease: "none", duration: 2 });
 
 export const Home = () => {
   const heroRef = React.useRef<HTMLDivElement | null>(null);

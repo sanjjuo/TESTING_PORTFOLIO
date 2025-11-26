@@ -1,9 +1,9 @@
 "use client";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { navLinks } from "./data";
 import { Sidebar } from "./Sidebar/Sidebar";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
 
 export const Navbar = () => {
   const pathName = usePathname();
@@ -22,7 +22,7 @@ export const Navbar = () => {
               className={cn(
                 pathName === data.href &&
                   "bg-white text-black px-4 py-1 rounded-3xl",
-                "transform transition ease-in duration-300 px-4 py-1 rounded-3xl"
+                "navlinks transform transition ease-in duration-300 px-4 py-1 rounded-3xl"
               )}
             >
               <li className="uppercase">{data.link}</li>

@@ -1,5 +1,4 @@
 "use client";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React from "react";
 import { services } from "./data";
@@ -8,7 +7,7 @@ export const Services = () => {
   const sectionRef = React.useRef<HTMLElement | null>(null);
   const headingRef = React.useRef<HTMLHeadingElement | null>(null);
 
-  useGSAP(() => {
+  React.useEffect(() => {
     const section = sectionRef.current;
     const heading = headingRef.current;
 
@@ -18,24 +17,21 @@ export const Services = () => {
       scrollTrigger: {
         trigger: section,
         start: "top 80%",
-        end: "bottom bottom",
+        toggleActions: "play none none none",
       },
     });
 
     tl.fromTo(
       heading,
-      { scaleY: 0, opacity: 0, transformOrigin: "bottom center" },
-      { scaleY: 1, opacity: 1, duration: 0.5, ease: "power3.out" }
-    ).fromTo(
-      ".services",
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        ease: "expo.out",
-        stagger: 0.2,
-      }
+      { y: 150, opacity: 0 },
+      { y: 0, opacity: 1, ease: "expo.out", duration: 1 }
+    );
+
+    const serviceElems = section.querySelectorAll(".services-items");
+    tl.fromTo(
+      serviceElems,
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, ease: "expo.out", duration: 1.5, stagger: 0.3 }
     );
   }, []);
 
@@ -50,7 +46,7 @@ export const Services = () => {
 
       <div className="flex-1 w-full space-y-10">
         {services.map((data) => (
-          <div key={data.id} className="services overflow-hidden">
+          <div key={data.id} className="services-items overflow-hidden">
             <div>
               <h1 className="text-2xl font-bold">{data.title}</h1>
               <p>{data.description}</p>

@@ -2,7 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { useAboutGsap } from "./Animations/useAboutGsap";
 
-export const About = () => {
+export const AboutImage = () => {
   const { sectionRef, largeTextRef } = useAboutGsap();
   return (
     <section

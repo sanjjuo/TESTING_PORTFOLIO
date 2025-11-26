@@ -36,6 +36,7 @@ export const useNavbarGsap = () => {
         scaleX: 0.98,
         borderRadius: 20,
         duration: 0.8,
+        backdropFilter: "blur(10px)",
         ease: "expo.inOut",
       }
     );

@@ -1,5 +1,3 @@
-import React from "react";
-
 export const Hero = () => {
   return (
     <section className="flex flex-col justify-end space-y-6 h-screen bg-black m-0 py-10 lg:py-20 px-5 lg:px-12">

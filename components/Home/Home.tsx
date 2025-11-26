@@ -1,14 +1,14 @@
 "use client";
-import { About } from "@/components/Home/components/About/About";
+import { AboutImage } from "@/components/Home/components/AboutImage/About";
 import { Hero } from "@/components/Home/components/Hero/Hero";
 import { Marquee } from "@/components/Home/components/Marquee/Marquee";
 import { Services } from "@/components/Home/components/Services/Services";
 import { LetsWork } from "@/components/common/LetsWork/LetsWork";
 import { Projects } from "@/components/common/Projects/Projects";
 import { useHomeGsap } from "./Animations/useHomeGsap";
+
 export const Home = () => {
   const { heroRef, othersRef } = useHomeGsap();
-
   return (
     <main>
       {/* <BlobCursor
@@ -38,7 +38,7 @@ export const Home = () => {
         </div>
         <Marquee />
         <div className="app_width">
-          <About />
+          <AboutImage />
           <LetsWork />
         </div>
       </div>

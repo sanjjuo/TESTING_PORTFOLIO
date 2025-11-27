@@ -21,7 +21,7 @@ export const TitleAndDetails = ({
         <GoBack />
         <h1
           style={{ fontFamily: "var(--font-humane)" }}
-          className="uppercase font-bold leading-[120px] lg:leading-[110px] break-words whitespace-normal text-[150px] lg:text-9xl"
+          className="uppercase font-bold leading-[120px] break-words whitespace-normal text-[150px] lg:text-[160px]"
         >
           {title}
         </h1>

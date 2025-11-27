@@ -14,7 +14,7 @@ export const useProjectsGsap = () => {
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: section,
-        start: "top 60%",
+        start: "top 80%",
         end: "bottom 80%",
       },
     });
@@ -36,7 +36,7 @@ export const useProjectsGsap = () => {
     tl.from(projectRef.current, {
       y: 30,
       opacity: 0,
-      duration: 0.6,
+      duration: 0.3,
       stagger: 0.5,
       ease: "power2.out",
     });

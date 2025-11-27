@@ -8,7 +8,7 @@ export const LetsWork = () => {
   return (
     <section
       ref={sectionRef}
-      className="flex items-center justify-center overflow-hidden"
+      className="flex items-center justify-center overflow-hidden h-screen"
     >
       <div className="relative">
         <h1

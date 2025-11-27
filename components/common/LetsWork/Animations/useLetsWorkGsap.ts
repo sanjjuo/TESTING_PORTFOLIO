@@ -1,5 +1,8 @@
-import gsap from "gsap";
 import React from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export const useLetsWorkGsap = () => {
   const sectionRef = React.useRef<HTMLDivElement | null>(null);
@@ -13,7 +16,8 @@ export const useLetsWorkGsap = () => {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 80%",
-        toggleActions: "play none none none",
+        end: "80% 80%",
+        // toggleActions: "play none none none",
       },
     });
 

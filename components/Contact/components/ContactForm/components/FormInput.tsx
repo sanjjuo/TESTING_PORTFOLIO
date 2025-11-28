@@ -17,6 +17,7 @@ interface formInputProps {
   label: string;
   placeholder: string;
   variant: "normal" | "textarea";
+  className?: string;
 }
 
 export const FormInput = ({
@@ -26,6 +27,7 @@ export const FormInput = ({
   name,
   placeholder,
   variant,
+  className,
 }: formInputProps) => {
   return (
     <FormField
@@ -36,7 +38,7 @@ export const FormInput = ({
           <span className="text-2xl font-bold text-muted-foreground">
             {number}
           </span>
-          <FormItem className="flex-1">
+          <FormItem className={cn("flex-1", className)}>
             <FormLabel className="uppercase text-2xl font-bold">
               {label}
             </FormLabel>

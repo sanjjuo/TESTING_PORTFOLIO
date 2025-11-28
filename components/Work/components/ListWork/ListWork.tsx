@@ -1,19 +1,17 @@
-import { workData } from "@/components/common/Projects/data";
+"use client";
 import { ArrowUp } from "lucide-react";
 import Link from "next/link";
+import { useListWorkGsap } from "./Animations/useListWorkGsap";
 
 export const ListWork = ({ category }: { category: string }) => {
-  const filteredData =
-    category === "all"
-      ? workData
-      : workData.filter((item) => item.category === category);
+  const { filteredData, sectionRef } = useListWorkGsap(category);
   return (
-    <div>
+    <div ref={sectionRef}>
       {filteredData.map((data, index) => (
         <Link
           href=""
           key={index}
-          className="py-10 flex items-center justify-between border-b border-muted-foreground transition transform ease-in-out duration-500 hover:border-white"
+          className="works py-10 flex items-center justify-between border-b border-muted-foreground transition transform ease-in-out duration-500 hover:border-white"
         >
           <div className="space-y-3">
             <h1 className="uppercase text-2xl">{data.name}</h1>

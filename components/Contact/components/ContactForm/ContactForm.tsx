@@ -3,11 +3,13 @@ import { Form } from "@/components/ui/form";
 import { FormInput } from "./components/FormInput";
 import { useContactFormFunction } from "./Services/Functions/useContactFormFunction";
 import { Button } from "@/components/ui/button";
+import { useContactFormGsap } from "./Animations/useContactFormGsap";
 
 export const ContactForm = () => {
   const { form, handleContactForm } = useContactFormFunction();
+  const { sectionRef } = useContactFormGsap();
   return (
-    <section>
+    <section ref={sectionRef}>
       <Form {...form}>
         <form
           onSubmit={form.handleSubmit(handleContactForm)}
@@ -21,6 +23,7 @@ export const ContactForm = () => {
             label="what's your name"
             placeholder="full name"
             variant="normal"
+            className="form-input"
           />
           <FormInput
             form={form}
@@ -29,6 +32,7 @@ export const ContactForm = () => {
             label="what's your email"
             placeholder="email address"
             variant="normal"
+            className="form-input"
           />
           <FormInput
             form={form}
@@ -37,8 +41,9 @@ export const ContactForm = () => {
             label="what's your message"
             placeholder="your message"
             variant="textarea"
+            className="form-input"
           />
-          <div className="flex items-center justify-center">
+          <div className="form-btn flex items-center justify-center">
             <Button
               type="submit"
               className="bg-white text-background uppercase text-2xl font-bold px-5 py-8 rounded-full w-60 hover:bg-white/80"

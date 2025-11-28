@@ -1,18 +1,22 @@
 "use client";
 import Image from "next/image";
-import { AboutMe } from "../AboutMe/AboutMe";
-import { ProfileInfo } from "../ProfileInfo/ProfileInfo";
+import { AboutMe } from "./components/AboutMe/AboutMe";
+import { ProfileInfo } from "./components/ProfileInfo/ProfileInfo";
 import { useProfileHeroFunction } from "./Functions/useProfileHeroFunction";
+import { useProfileHeroGsap } from "./Animations/useProfileHeroGsap";
 
 export const ProfileHero = () => {
   const { handleMouseMove, imageRef } = useProfileHeroFunction();
+  const { largeTextRef } = useProfileHeroGsap();
   return (
     <section
       onMouseMove={handleMouseMove}
       className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center"
     >
       <div className="flex flex-col items-start space-y-10 lg:space-y-20">
-        <h1 className="hero_h1">mohamed sanjeed</h1>
+        <h1 ref={largeTextRef} className="hero_h1">
+          mohamed sanjeed
+        </h1>
         <ProfileInfo />
         <AboutMe />
       </div>

@@ -1,6 +1,10 @@
+"use client";
+import { useProfileInfoGsap } from "./Animations/useProfileInfoGsap";
+
 export const ProfileInfo = () => {
+  const { profileRef } = useProfileInfoGsap();
   return (
-    <ul className="flex items-center justify-between w-full">
+    <ul ref={profileRef} className="flex items-center justify-between w-full">
       <li className="flex flex-col">
         <span className="text-xs text-muted-foreground font-bold">
           Location

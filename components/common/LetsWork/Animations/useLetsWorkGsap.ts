@@ -16,25 +16,36 @@ export const useLetsWorkGsap = () => {
       scrollTrigger: {
         trigger: sectionRef.current,
         start: "top 80%",
-        end: "80% 80%",
-        // toggleActions: "play none none none",
+        end: "top 20%",
+        toggleActions: "play none none reverse",
       },
     });
 
-    tl.from(descTextRef.current, {
-      y: 100,
-      opacity: 0,
-      duration: 1,
-      ease: "expo.out",
-    }).from(
+    tl.fromTo(
+      descTextRef.current,
+      {
+        y: 100,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "expo.out",
+      }
+    );
+    tl.fromTo(
       btnRef.current,
       {
         y: 100,
         opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
         duration: 1,
         ease: "expo.out",
-      },
-      "-=0.5"
+      }
     );
   }, []);
 

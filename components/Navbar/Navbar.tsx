@@ -8,7 +8,7 @@ export const Navbar = () => {
   return (
     <nav
       ref={navbarRef}
-      className="sticky top-0 w-full z-50 py-5 px-5 lg:px-12"
+      className="sticky top-0 w-full z-40 py-5 px-5 lg:px-12"
     >
       <div className="flex items-center justify-between">
         <div>

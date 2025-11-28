@@ -29,7 +29,7 @@ export const useProjectsGsap = () => {
         y: 0,
         opacity: 1,
         ease: "expo.out",
-        duration: 1,
+        duration: 0.5,
       }
     );
     // PROJECT CARDS ANIMATION

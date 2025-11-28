@@ -11,8 +11,8 @@ export const WorkDetails = ({ slug }: { slug: string }) => {
     return <p>Work not found</p>;
   }
   return (
-    <div className="app_width mt-20 lg:mt-10">
-      <section className="grid grid-cols-1 lg:grid-cols-5 gap-5 h-screen">
+    <section className="app_width">
+      <div className="grid grid-cols-1 lg:grid-cols-5 gap-5 h-screen py-20 lg:py-10">
         <div className="col-span-1 h-full">
           <TitleAndDetails
             title={workDetails?.name ?? ""}
@@ -34,8 +34,8 @@ export const WorkDetails = ({ slug }: { slug: string }) => {
             description={workDetails.description}
           />
         </div>
-      </section>
+      </div>
       <LetsWork />
-    </div>
+    </section>
   );
 };

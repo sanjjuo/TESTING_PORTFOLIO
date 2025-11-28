@@ -13,8 +13,8 @@ gsap.registerPlugin(ScrollTrigger);
 export const Work = () => {
   const [category, setCategory] = React.useState("all");
   return (
-    <div className="app_width mt-20 lg:mt-10">
-      <section>
+    <section className="app_width">
+      <div className="py-20 lg:py-10">
         <Tabs defaultValue="grid" className="w-full">
           <div className="flex flex-col lg:flex-row items-end lg:items-center justify-between w-full space-y-3 lg:space-y-0">
             <TabHeader />
@@ -26,7 +26,7 @@ export const Work = () => {
           </div>
           <TabContent category={category} />
         </Tabs>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };

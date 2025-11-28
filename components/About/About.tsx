@@ -4,10 +4,12 @@ import { Technologies } from "./components/Technologies/Technologies";
 
 export const About = () => {
   return (
-    <div className="app_width mt-20 lg:mt-10">
-      <ProfileHero />
-      <Technologies />
-      <LetsWork />
-    </div>
+    <section className="app_width">
+      <div className="py-20 lg:py-10">
+        <ProfileHero />
+        <Technologies />
+        <LetsWork />
+      </div>
+    </section>
   );
 };

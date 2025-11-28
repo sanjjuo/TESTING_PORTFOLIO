@@ -2,8 +2,8 @@
 import { cn } from "@/lib/utils";
 import { ArrowUp } from "lucide-react";
 import Image from "next/image";
-import { useProjectsGsap } from "./services/Animations/useProjectsGsap";
-import { useProjectsFunction } from "./services/Functions/useProjectsFunction";
+import { useProjectsGsap } from "./Animations/useProjectsGsap";
+import { useProjectsFunction } from "./Functions/useProjectsFunction";
 import Link from "next/link";
 
 export const Projects = ({ category }: { category: string }) => {

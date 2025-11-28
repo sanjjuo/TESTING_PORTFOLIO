@@ -1,5 +1,5 @@
 import { usePathname } from "next/navigation";
-import { workData } from "../../data";
+import { workData } from "../data";
 
 export const useProjectsFunction = ({ category }: { category: string }) => {
   const pathname = usePathname();

@@ -23,7 +23,7 @@ export const useContactFormGsap = () => {
           stagger: 0.4,
           scrollTrigger: {
             trigger: sectionRef.current,
-            start: "top 60%",
+            start: "top 70%",
           },
         }
       );

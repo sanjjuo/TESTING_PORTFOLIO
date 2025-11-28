@@ -20,9 +20,14 @@ export const useHeadingsGsap = () => {
         {
           opacity: 0,
           scaleX: 0,
-          duration: 1,
         },
-        { scaleX: 1, opacity: 1, stagger: 0.05, ease: "power3.out" }
+        {
+          scaleX: 1,
+          opacity: 1,
+          duration: 2,
+          stagger: 0.05,
+          ease: "power3.out",
+        }
       );
     },
     { scope: largeTextRef }

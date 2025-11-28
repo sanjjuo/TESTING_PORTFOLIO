@@ -8,7 +8,7 @@ import Link from "next/link";
 
 export const Projects = ({ category }: { category: string }) => {
   const { isTitle, itemsToShow } = useProjectsFunction({ category });
-  const { headingRef, projectRef, sectionRef } = useProjectsGsap();
+  const { headingRef, sectionRef } = useProjectsGsap();
 
   return (
     <section ref={sectionRef} className={cn(isTitle && "px-0 py-10")}>
@@ -22,13 +22,10 @@ export const Projects = ({ category }: { category: string }) => {
           return (
             <Link
               href={`/work/${data.slug}`}
-              ref={(item) => {
-                projectRef.current[index] = item;
-              }}
               key={data.id}
               className={cn(
                 isFull ? "lg:col-span-2" : "lg:col-span-1",
-                "space-y-3 projects"
+                "projects space-y-3"
               )}
             >
               <div className="flex items-center justify-between">

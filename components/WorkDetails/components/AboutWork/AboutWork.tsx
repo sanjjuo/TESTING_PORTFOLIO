@@ -1,3 +1,6 @@
+"use client";
+import { useAboutWorkgsap } from "./Animations/useAboutWorkGsap";
+
 export const AboutWork = ({
   subdesc,
   description,
@@ -5,10 +8,18 @@ export const AboutWork = ({
   subdesc: string;
   description: string;
 }) => {
+  const { sectionRef, paraRef, subTitleRef } = useAboutWorkgsap();
   return (
-    <div className="flex flex-col items-start justify-between h-full">
-      <h4 className="uppercase">{subdesc}</h4>
-      <p className="text-sm">{description}</p>
+    <div
+      ref={sectionRef}
+      className="flex flex-col items-center justify-between space-y-5 h-full"
+    >
+      <h4 ref={subTitleRef} className="uppercase text-xl">
+        {subdesc}
+      </h4>
+      <p ref={paraRef} className="text-base">
+        {description}
+      </p>
     </div>
   );
 };

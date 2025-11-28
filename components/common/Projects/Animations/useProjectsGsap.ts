@@ -5,41 +5,53 @@ import gsap from "gsap";
 export const useProjectsGsap = () => {
   const sectionRef = React.useRef<HTMLElement | null>(null);
   const headingRef = React.useRef<HTMLHeadingElement | null>(null);
-  const projectRef = React.useRef<(HTMLAnchorElement | null)[]>([]);
 
   useGSAP(() => {
     const section = sectionRef.current;
     const heading = headingRef.current;
     if (!section || !heading) return;
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: section,
-        start: "top 80%",
-        end: "bottom 80%",
-      },
-    });
-    //title animation
-    tl.fromTo(
+
+    // Animate heading
+    gsap.fromTo(
       heading,
-      {
-        y: 150,
-        opacity: 0,
-      },
+      { y: 100, opacity: 0 },
       {
         y: 0,
         opacity: 1,
         ease: "expo.out",
-        duration: 0.5,
+        duration: 1,
+        scrollTrigger: {
+          trigger: heading,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
       }
     );
-    // PROJECT CARDS ANIMATION
-    tl.from(projectRef.current, {
-      y: 30,
-      opacity: 0,
-      duration: 0.3,
-      stagger: 0.5,
-      ease: "power2.out",
+
+    // Animate each project card individually
+    const projects = section.querySelectorAll(".projects");
+    projects.forEach((project) => {
+      gsap.fromTo(
+        project,
+        {
+          opacity: 0,
+          y: 100,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.7,
+          ease: "expo.out",
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: project,
+            start: "top 85%",
+            toggleActions: "play none none none",
+          },
+        }
+      );
     });
   }, []);
-  return { sectionRef, headingRef, projectRef };
+
+  return { sectionRef, headingRef };
 };

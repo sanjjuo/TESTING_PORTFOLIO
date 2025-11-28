@@ -6,10 +6,7 @@ import Link from "next/link";
 export const LetsWork = () => {
   const { sectionRef, descTextRef, btnRef } = useLetsWorkGsap();
   return (
-    <section
-      ref={sectionRef}
-      className="flex items-center justify-center h-screen"
-    >
+    <section ref={sectionRef} className="flex items-center justify-center">
       <div className="relative">
         <h1
           style={{ fontFamily: "humane" }}

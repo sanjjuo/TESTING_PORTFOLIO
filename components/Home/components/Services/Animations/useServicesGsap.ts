@@ -19,18 +19,18 @@ export const useServicesGsap = () => {
       },
     });
 
-    //title animation
+    const serviceElems = section.querySelectorAll(".services-items");
+
+    //title animation and services animation
     tl.fromTo(
       heading,
-      { y: 150, opacity: 0 },
+      { y: 100, opacity: 0 },
       { y: 0, opacity: 1, ease: "expo.out", duration: 1 }
-    );
-
-    const serviceElems = section.querySelectorAll(".services-items");
-    tl.fromTo(
+    ).fromTo(
       serviceElems,
-      { opacity: 0, y: 50 },
-      { opacity: 1, y: 0, ease: "expo.out", duration: 1.5, stagger: 0.3 }
+      { opacity: 0, y: 100 },
+      { opacity: 1, y: 0, ease: "expo.out", duration: 0.7, stagger: 0.3 },
+      "-=0.5"
     );
   }, []);
   return { sectionRef, headingRef };

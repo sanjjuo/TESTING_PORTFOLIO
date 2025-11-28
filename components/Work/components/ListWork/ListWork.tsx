@@ -9,7 +9,7 @@ export const ListWork = ({ category }: { category: string }) => {
     <div ref={sectionRef}>
       {filteredData.map((data, index) => (
         <Link
-          href=""
+          href={`/work/${data.slug}`}
           key={index}
           className="works py-10 flex items-center justify-between border-b border-muted-foreground transition transform ease-in-out duration-500 hover:border-white"
         >

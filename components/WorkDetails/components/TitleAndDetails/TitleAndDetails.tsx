@@ -1,5 +1,7 @@
+"use client";
 import Link from "next/link";
 import { GoBack } from "../GoBack/GoBack";
+import { useTitleAndDetailsGsap } from "./Animations/useTitleAndDetailsGsap";
 
 interface titleAndDetailsProps {
   title: string;
@@ -15,28 +17,33 @@ export const TitleAndDetails = ({
   completed,
   view,
 }: titleAndDetailsProps) => {
+  const { largeTextRef, sectionRef } = useTitleAndDetailsGsap();
   return (
-    <div className="flex flex-col items-start justify-between h-full">
+    <div
+      ref={sectionRef}
+      className="flex flex-col items-start justify-between h-full"
+    >
       <div className="flex flex-col items-start space-y-10">
         <GoBack />
         <h1
+          ref={largeTextRef}
           style={{ fontFamily: "var(--font-humane)" }}
-          className="uppercase font-bold leading-[120px] break-words whitespace-normal text-[150px] lg:text-[160px]"
+          className="uppercase font-bold leading-[120px] break-words whitespace-normal text-[150px]"
         >
           {title}
         </h1>
       </div>
       <div className="flex flex-col space-y-10">
         <ul className="flex flex-row lg:flex-col items-center lg:items-start lg:space-y-5 space-x-5 lg:space-x-0">
-          <li className="flex flex-col font-semibold capitalize text-lg">
+          <li className="detail-list flex flex-col font-semibold capitalize text-lg">
             <span className="text-muted-foreground text-sm">Completed</span>
             {completed}
           </li>
-          <li className="flex flex-col font-semibold capitalize text-lg">
+          <li className="detail-list flex flex-col font-semibold capitalize text-lg">
             <span className="text-muted-foreground text-sm">Category</span>
             {category}
           </li>
-          <li className="flex flex-col font-semibold capitalize text-lg">
+          <li className="detail-list flex flex-col font-semibold capitalize text-lg">
             <span className="text-muted-foreground text-sm">Technologies</span>
             {technologies.join(" / ")}
           </li>
